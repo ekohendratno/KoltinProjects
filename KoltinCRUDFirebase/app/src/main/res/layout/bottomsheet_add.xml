@@ -9,21 +9,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:padding="25dp"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="40dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/dialog_title"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="ADD/EDIT"
-            android:textSize="24dp"
+        <RelativeLayout
             android:layout_marginBottom="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:text="ADD/EDIT"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnDismiss"
+                android:src="@drawable/baseline_close_24"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:background="?selectableItemBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/et_key"
+            android:text=""
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            />
+
 
         <TextView
             android:text="Judul"
@@ -51,7 +81,9 @@
             android:text=""
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="textMultiLine"
+            android:minLines="6"
+            android:textAlignment="textStart"
             android:background="#f2f2f2"
             android:textColor="#000"
             android:paddingTop="12dp"
@@ -69,17 +101,6 @@
             android:text="Simpan"
             android:backgroundTint="#4CAF50"
             android:textColor="#ffffff"
-            android:textAllCaps="true"/>
-        <Button
-            android:id="@+id/idBtnDismiss"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="15dp"
-            android:text="Close"
-            android:backgroundTint="#f2f2f2"
-            android:textColor="#000"
             android:textAllCaps="true"/>
     </LinearLayout>
 

@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-    private var dataList = mutableListOf<Data>()
+    private var dataList = mutableListOf<Notes>()
 
     var jsonData : String = ""
     private lateinit var empty_template:  TextView
@@ -128,10 +128,10 @@ class MainActivity : AppCompatActivity() {
 
                 if(!key.isEmpty() ){
 
-                    dataList.set(key.toInt(),Data(title, desc))
+                    dataList.set(key.toInt(),Notes(title, desc))
 
                 }else{
-                    dataList.add(Data(title, desc))
+                    dataList.add(Notes(title, desc))
 
                 }
 
@@ -216,9 +216,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    data class Data(val title: String, val desc: String)
 
-    class DataAdapter( private val dataList: List<Data>, val onClick : OnClick) : RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
+    class DataAdapter( private val dataList: List<Notes>, val onClick : OnClick) : RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
 
         open interface OnClick {
             fun edit(position: Int)
@@ -286,7 +285,7 @@ class MainActivity : AppCompatActivity() {
             val title = data.getString("title")
             val desc = data.getString("desc")
 
-            dataList.add(Data(title, desc))
+            dataList.add(Notes(title, desc))
         }
     }
 
@@ -312,7 +311,7 @@ class MainActivity : AppCompatActivity() {
                         val data = dataArray.getJSONObject(i)
                         val title = data.getString("title")
                         val desc = data.getString("desc")
-                        dataList.add(Data(title,desc))
+                        dataList.add(Notes(title,desc))
                     }
 
                     viewAdapter.notifyDataSetChanged()

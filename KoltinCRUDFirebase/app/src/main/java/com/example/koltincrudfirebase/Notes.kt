@@ -5,8 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Notes(
-    var strId: String = "0",
-    var strTitle: String? = null,
-    var strDesc: String? = null,
-    var strTanggal: String? = null,
+    var title: String? = null,
+    var desc: String? = null,
+    var tanggal: String? = null,
 ): Parcelable

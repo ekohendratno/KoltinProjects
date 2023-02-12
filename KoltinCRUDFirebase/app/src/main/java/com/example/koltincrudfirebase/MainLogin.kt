@@ -1,10 +1,13 @@
 package com.example.koltincrudfirebase
 
+
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
+import android.preference.PreferenceManager
 import android.widget.Button
 import android.widget.EditText
 
@@ -42,7 +45,7 @@ class MainLogin  : AppCompatActivity(){
 
 
 
-                val sharedPref =  getSharedPreferences("PREF_NAME",Context.MODE_PRIVATE)
+                val sharedPref =  getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE)
                 with (sharedPref.edit()) {
                     putBoolean("_login", true)
                     apply()
@@ -63,13 +66,13 @@ class MainLogin  : AppCompatActivity(){
     fun redirectLogin(){
 
 
-        val sharedPref =  getSharedPreferences("PREF_NAME",Context.MODE_PRIVATE)
+        val sharedPref =  getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE)
         val _login = sharedPref.getBoolean("_login",false)
 
         if(_login == true){
 
 
-            val progressDialog = ProgressDialog(this)
+            val progressDialog = ProgressDialog(this, R.style.Theme_KoltinCRUDFirebase)
             progressDialog.isIndeterminate = true
             progressDialog.setMessage("Loading...")
             progressDialog.show()

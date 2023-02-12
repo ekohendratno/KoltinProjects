@@ -7,13 +7,13 @@
         android:icon="@drawable/baseline_power_settings_new_24"
         android:title="Logout"
         android:iconTint="#F44336"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="collapseActionView"/>
 
     <item
         android:id="@+id/refresh"
         android:icon="@drawable/baseline_refresh_24"
         android:title="Refresh"
         android:iconTint="#4CAF50"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="collapseActionView"/>
 
 </menu>

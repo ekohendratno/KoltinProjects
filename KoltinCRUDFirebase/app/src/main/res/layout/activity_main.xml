@@ -6,7 +6,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f2f2"
+    android:background="#f1f1f1"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -17,6 +17,7 @@
         app:elevation="0dp"
         android:fitsSystemWindows="false"
         app:layout_scrollFlags="scroll|snap"
+        android:background="#FFC107"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
@@ -25,19 +26,39 @@
             android:id="@+id/toolbar"
             android:minHeight="?attr/actionBarSize">
             <TextView
-                android:text="CRUD"
+                android:text="Notes"
                 style="@style/TextAppearance.AppCompat.Title"
+                android:textColor="#fff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/items"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/empty_template"
+            android:text="Tidak ada data!"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:paddingTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_below="@+id/empty_template"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/items"/>
+
+    </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAction"
@@ -46,6 +67,8 @@
         android:src="@drawable/baseline_add_24"
         android:layout_gravity="bottom|end"
         app:elevation="6dp"
+        android:backgroundTint="#FFC107"
+        app:borderWidth="0dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

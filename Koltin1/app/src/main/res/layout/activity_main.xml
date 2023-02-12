@@ -26,7 +26,7 @@
             android:id="@+id/toolbar"
             android:minHeight="?attr/actionBarSize">
             <TextView
-                android:text="CRUD"
+                android:text="Notes"
                 style="@style/TextAppearance.AppCompat.Title"
                 android:textColor="#fff"
                 android:layout_width="match_parent"
