@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/baseline_power_settings_new_24"
+        android:title="Logout"
+        android:iconTint="#F44336"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/refresh"
+        android:icon="@drawable/baseline_refresh_24"
+        android:title="Refresh"
+        android:iconTint="#4CAF50"
+        app:showAsAction="ifRoom"/>
+
+</menu>
